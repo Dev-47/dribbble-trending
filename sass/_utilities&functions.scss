@@ -1,0 +1,28 @@
+
+// fonts and images
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800;900&display=swap');
+
+// Variables
+$nav-color: rgb(151, 151, 151);
+$theme-color: rgb(243, 109, 0);
+$shadow: 0 0 3px 3px rgb(230, 230, 230);
+
+// mixings
+@mixin flex($direction, $justify) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+}
+
+@mixin button($py, $px) {
+    background: $theme-color;
+    border-radius: 2rem;
+    color: #fff;
+    padding: $py $px;
+    
+}
+
+// extend
+%debug {
+    border: 2px solid red;
+}

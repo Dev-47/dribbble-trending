@@ -1,0 +1,120 @@
+
+@import "_utilities&functions.scss";
+
+.landing-page {
+    @include flex(row-reverse, none);
+    height: 100vh;
+
+    section {
+        width: 50%;
+        padding:1rem;
+    }
+
+    .part-1 {
+        background: url('../images/background\ flyer\ 4.jpg') no-repeat center center / cover;
+
+        h2 {
+            padding: 2rem 0 0 7rem;
+            color: #fff;
+        }
+    }
+
+    .part-2 {
+        padding: 2.5rem;
+        padding-left: 2.5rem;
+
+        .nav {
+            @include flex(row, space-between);
+            color: $nav-color;
+
+            &>ul {
+                @include flex(row, space-between);
+                width: 38%;
+                place-items: center;
+
+                .fa-shopping-bag{
+                    position: relative;
+                
+                    &::after {
+                        content: '3';
+                        position: absolute;
+                        background: $theme-color;
+                        color: #fff;
+                        border-radius: 2rem;
+                        font-size: 0.6rem;
+                        padding: 0.14rem;
+                        bottom: 0.39rem;
+                        right: -0.4rem;
+                    }
+                }
+
+                .signUp {
+                    @include button(0.5rem, 1.5rem);
+                }
+            }
+        }
+
+        h2 {
+            font-size: 4rem;
+            font-weight: 600;
+            margin-top: 6rem;
+            width: 80%;
+            color: darken($nav-color, 20%);
+        }
+
+        .input-div {
+            margin-top: 4.5rem;
+            height: 4rem;
+            position: relative;
+            @include flex(row, space-around);
+            align-items: center;
+
+            // @extend %debug;
+
+            &>* {
+                height: 3.5rem;
+            }
+
+            .fa-play{
+                font-size: 1rem;
+                color: rgb(255, 81, 0);
+                display: grid;
+                place-items: center;
+                outline: 1px solid rgb(255, 81, 0);
+                border-radius: 50%;
+                padding: 1rem;
+                box-shadow: $shadow;
+            }
+
+            input {
+                width: 80%;
+                padding: 0.5rem;
+                padding-left: 2rem;
+                border-radius: 2rem;
+                font-size: 1.2rem;
+                outline: none;
+                border: none;
+                box-shadow: $shadow;
+
+                &:focus, &:active {
+                    border: none;
+                    outline: none;
+                }
+            }
+
+            .fa-search {
+                position: absolute;
+                right: 3.4rem;
+                top: 0.6rem;
+                display: grid;
+                place-items: center;
+                color: $nav-color;
+                box-shadow: $shadow;
+                height: auto;
+                width: auto;
+                @include button(0.9rem, 1.8rem);
+            }
+        }
+    }
+
+}
